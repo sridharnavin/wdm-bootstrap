@@ -36,9 +36,9 @@
 				<a class="navbar-brand" href="#">WDM Bootstrap</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-		            <li class="active"><a href="<?php echo home_url(); ?>">Home</a></li>
-	    		</ul>
+	            <?php 
+	            	wp_nav_menu( array( 'menu_class' => 'nav navbar-nav', 'container' => '', 'theme_location' => 'primary' ) );
+	            ?>
 			</div><!--/.nav-collapse -->
 		</div>
 	</nav>

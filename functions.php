@@ -21,3 +21,15 @@ function wdm_bootstrap_scripts() {
 	wp_enqueue_script( 'bootstrap-jquery' );
 }
 add_action( 'wp_enqueue_scripts', 'wdm_bootstrap_scripts' );
+
+// Creating custom menus in the dashboard for use in our theme.
+register_nav_menus( array ( 'primary' => 'Primary Menu', 'footer' => 'Footer Menu'));
+
+// Append the 'active' class to the current nav menu item.
+function active_nav_element( $classes, $item ) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'active_nav_element', 10, 2 );
